@@ -16,7 +16,11 @@ body {
 main {
   color:#333333;
   background-color: #eeee;
-  min-height: 92lvh;
+  //min-height: 92lvh;
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  //grid-template-rows: repeat(11,1fr);
+  gap:$gap-sm;
 }
 
 .nav-header {
