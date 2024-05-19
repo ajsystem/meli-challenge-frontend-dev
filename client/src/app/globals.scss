@@ -1,0 +1,33 @@
+@import "theme";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  color:$text-primary-color;
+  font-size: $font-size-md;
+}
+
+main {
+  color:#333333;
+  background-color: #eeee;
+  min-height: 92lvh;
+}
+
+.nav-header {
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  gap:$gap-sm;
+  height: 8lvh;
+  min-height: 80px;
+  max-height: 80px;
+  background-color: $primary-color;
+}
+
+
+

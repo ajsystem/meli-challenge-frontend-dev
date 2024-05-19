@@ -1,0 +1,67 @@
+@import "../../app/theme.scss";
+
+// utility
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+}
+
+.nav-form-area {
+  flex:1;
+  display: flex;
+  align-items: center;
+}
+
+.nav-form-area form{
+  display: flex;
+  width: 100%;
+  height: 47px;
+  border: 1px solid transparent;
+}
+
+.nav-form-area form > input.nav-search{
+  flex:1;
+  padding-inline: $padding-xs;
+  padding-block: $padding;
+  font-size: $font-size-lg;
+  border: none;
+  border-top-left-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  color: $text-primary-color
+}
+
+.nav-form-area form > input.nav-search::placeholder{
+  color: $text-tertiary-color
+}
+
+.nav-form-area form:focus-within {
+  border: 1px solid $secondary-color;
+  border-radius: $border-radius;
+}
+
+.nav-form-area form > input.nav-search:focus,
+.nav-form-area form > input.nav-search:focus-visible {
+
+  outline: none;
+}
+
+.nav-form-area form > button.nav-search-button {
+  width: 47px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  cursor: pointer;
+}
+
+.nav-form-area form > button.nav-search-button > .search-logo{
+  object-fit: contain;
+}

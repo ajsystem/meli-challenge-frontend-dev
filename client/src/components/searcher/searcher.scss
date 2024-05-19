@@ -1,0 +1,34 @@
+@import "../../app/theme.scss";
+
+.nav-header-content {
+  grid-column: 2 / 12;
+  display: flex;
+}
+
+.nav-header .nav-logo-area {
+  margin-right: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-header .nav-logo-area .meli-logo {
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .nav-header {
+    gap:$gap
+  }
+
+  .nav-header-content {
+    grid-column: 1 / 13;
+    display: flex;
+    padding-inline: $padding;
+  }
+
+  .nav-header .nav-logo-area {
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+  }
+}
