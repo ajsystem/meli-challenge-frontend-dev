@@ -1,15 +1,14 @@
 'use client';
-import React, { SyntheticEvent, useRef } from 'react';
+import React, { SyntheticEvent, useEffect, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import './form.scss';
+import { useSyncParamsInput } from '@/hooks';
 
 export const Form = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const router = useRouter();
-  const searchParams = useSearchParams();
-
-  const params = new URLSearchParams(searchParams.toString());
+  const inputRef = useSyncParamsInput('search');
 
   const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
@@ -39,7 +38,7 @@ export const Form = () => {
           autoComplete='off'
           placeholder='Nunca dejes de buscar'
           className='nav-search'
-          defaultValue={params.get('search') || ''}
+          ref={inputRef}
         />
         <button
           type='submit'
