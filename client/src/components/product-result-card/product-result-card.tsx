@@ -29,7 +29,7 @@ export const ProductResultCard = ({ productItem }: { productItem: Item }) => {
               src={'/images/ic_shipping@2x.png'}
               width={26}
               height={26}
-              alt={productItem.title}
+              alt={'Envío gratis'}
             />
           )}
         </div>
