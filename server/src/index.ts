@@ -3,7 +3,7 @@ import cors from 'cors';
 import { routes } from './routes';
 import { authorMiddleware, errorHandlerMiddleWare, notFoundMiddleware } from './middlewares';
 
-const PORT = 3000;
+const PORT = 3010;
 
 const app = express();
 app.use(cors());
