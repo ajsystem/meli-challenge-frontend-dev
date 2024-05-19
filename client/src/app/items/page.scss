@@ -98,12 +98,19 @@
 .results-container ol li.product-container > .product-details-wrapper .details .details-price-shipping .price {
   font-size: $font-size-xl;
   margin-right: $margin-xs;
+  text-decoration: none;
+  color: $text-primary-color
 }
 
 .results-container ol li.product-container > .product-details-wrapper .details .details-title {
   font-size: $font-size-lg;
   max-width: 80%;
   font-weight: normal;
+}
+
+.results-container ol li.product-container > .product-details-wrapper .details .details-title a {
+  text-decoration: none;
+  color: $text-primary-color
 }
 
 .results-container ol li.product-container > .product-details-wrapper .location {

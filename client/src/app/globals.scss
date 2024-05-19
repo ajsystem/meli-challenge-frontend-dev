@@ -23,13 +23,20 @@ main .main-container {
   display: grid;
   grid-template-columns: repeat(12,1fr);
   gap:$gap-sm;
+  max-width: 1200px;
+  margin: auto;
+}
+
+header {
+  background-color: $primary-color;
 }
 
 .nav-header {
   display: grid;
   grid-template-columns: repeat(12,1fr);
   gap:$gap-sm;
+  max-width: 1200px;
+  margin: auto;
   min-height: 80px;
   max-height: 80px;
-  background-color: $primary-color;
 }
