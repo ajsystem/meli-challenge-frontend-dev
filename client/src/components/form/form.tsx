@@ -1,6 +1,6 @@
 'use client';
-import React, { SyntheticEvent, useEffect, useRef } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import React, { SyntheticEvent, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import './form.scss';
 import { useSyncParamsInput } from '@/hooks';

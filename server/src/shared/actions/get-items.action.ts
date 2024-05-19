@@ -10,4 +10,3 @@ export const getItemsAction = async (queryString: string): Promise<ItemsResponse
   return data;
 };
 
-//https://api.mercadolibre.com/categories/MLA1152

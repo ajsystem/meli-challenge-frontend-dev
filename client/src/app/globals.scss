@@ -48,3 +48,11 @@ header {
     color: $text-danger;
     font-weight: 500;
 }
+
+.loader-container {
+  grid-column: 2 / 12;
+    margin-block: 18px;
+    margin-inline: auto;
+    color: $text-primary-color;
+    font-weight: 500;
+}

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.scss';
 import { Searcher } from '@/components/searcher';
+import { Suspense } from 'react';
+import './globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,14 +19,16 @@ export default function RootLayout({
   return (
     <html lang='es'>
       <body className={inter.className}>
-        <header>
-          <div className='nav-header'>
-            <Searcher />
-          </div>
-        </header>
-        <main>
-          <div className='main-container'>{children}</div>
-        </main>
+        <Suspense>
+          <header>
+            <div className='nav-header'>
+              <Searcher />
+            </div>
+          </header>
+          <main>
+            <div className='main-container'>{children}</div>
+          </main>
+        </Suspense>
       </body>
     </html>
   );
