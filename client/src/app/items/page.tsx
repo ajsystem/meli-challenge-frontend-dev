@@ -24,7 +24,7 @@ const page = async ({ searchParams }: { searchParams?: { [key: string]: string }
     <>
       <Breadcrumb categories={data.categories} />
       <section className='results-container'>
-        {data.items.length === 0 && <p className='no-results'>No se encontraron resultados</p>}
+        {data.items.length === 0 && <p className='no-results'>No se encontraron resultados, intenta realizar otra búsqueda.</p>}
 
         <ol>
           {data.items.map((item) => (
