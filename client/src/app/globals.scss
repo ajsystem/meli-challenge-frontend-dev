@@ -16,10 +16,12 @@ body {
 main {
   color:#333333;
   background-color: #eeee;
-  //min-height: 92lvh;
+  min-height: calc(100vh - 80px);
+}
+
+main .main-container {
   display: grid;
   grid-template-columns: repeat(12,1fr);
-  //grid-template-rows: repeat(11,1fr);
   gap:$gap-sm;
 }
 
@@ -27,11 +29,7 @@ main {
   display: grid;
   grid-template-columns: repeat(12,1fr);
   gap:$gap-sm;
-  height: 8lvh;
   min-height: 80px;
   max-height: 80px;
   background-color: $primary-color;
 }
-
-
-

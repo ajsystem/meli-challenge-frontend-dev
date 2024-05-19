@@ -21,7 +21,9 @@ export default function RootLayout({
         <header className='nav-header'>
           <Searcher />
         </header>
-        <main>{children}</main>
+        <main>
+          <div className='main-container'>{children}</div>
+        </main>
       </body>
     </html>
   );
