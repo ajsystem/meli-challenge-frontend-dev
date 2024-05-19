@@ -18,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang='es'>
       <body className={inter.className}>
-        <header className='nav-header'>
-          <Searcher />
+        <header>
+          <div className='nav-header'>
+            <Searcher />
+          </div>
         </header>
         <main>
           <div className='main-container'>{children}</div>

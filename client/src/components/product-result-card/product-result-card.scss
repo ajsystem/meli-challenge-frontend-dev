@@ -1,0 +1,81 @@
+
+@import '../../app/theme.scss';
+
+.product-details-wrapper {
+  display: flex;
+  background-color: #ffffff;
+  border-bottom: thin solid #eee;
+}
+
+.product-details-wrapper .product-image {
+  object-fit: cover;
+  border-radius: $border-radius;
+}
+
+.product-details-wrapper .details {
+  padding-left: $padding-sm;
+  flex: 2;
+}
+
+.product-details-wrapper .details .details-price-shipping {
+  margin-block: $margin-md;
+  display: flex;
+  align-items: center;
+}
+
+.product-details-wrapper .details .details-price-shipping .price {
+  font-size: $font-size-xl;
+  margin-right: $margin-xs;
+  text-decoration: none;
+  color: $text-primary-color
+}
+
+.product-details-wrapper .details .details-title {
+  font-size: $font-size-lg;
+  max-width: 80%;
+  font-weight: normal;
+}
+
+.product-details-wrapper .details .details-title a {
+  text-decoration: none;
+  color: $text-primary-color
+}
+
+.product-details-wrapper .location {
+  margin-block: $margin-md;
+  font-size: $font-size-xs;
+  margin-right: $margin-xs;
+  flex: 1;
+}
+
+@media (max-width: 650px) {
+
+  .product-details-wrapper .product-image{
+    width: 140px;
+    height: 140px;
+ }
+
+ .product-details-wrapper .details {
+   padding-left: $padding-xs;
+   flex: 2;
+ }
+
+ .product-details-wrapper .details .details-price-shipping {
+   margin-bottom: $margin-xs;
+ }
+
+
+ .product-details-wrapper .details .details-price-shipping .price {
+   font-size: $font-size-md;
+   margin-right: $margin-xs;
+ }
+ 
+ .product-details-wrapper .details .details-title {
+   font-size: $font-size-sm;
+   font-weight: normal;
+ }
+
+ .product-details-wrapper .location {
+   display: none;
+ }
+}

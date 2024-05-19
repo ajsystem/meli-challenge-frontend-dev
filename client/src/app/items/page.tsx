@@ -1,105 +1,35 @@
 import React from 'react';
 import { redirect } from 'next/navigation';
 import './page.scss';
-import Image from 'next/image';
+import { Metadata } from 'next';
+import { api } from '@/shared/api';
+import { Breadcrumb } from '@/components/breadcrumb';
+import { ProductResultCard } from '@/components/product-result-card';
 
-interface ResponseItems {
-  author: Author;
-  categories: string[];
-  items: Item[];
+export async function generateMetadata({ searchParams }: { searchParams?: { [key: string]: string } }): Promise<Metadata> {
+  const search = searchParams?.search || '';
+  return {
+    title: `Resultados para: ${search}`,
+  };
 }
 
-interface Item {
-  id: string;
-  title: string;
-  price: Price;
-  picture: string;
-  condition: string;
-  free_shipping: boolean;
-}
-
-interface Price {
-  currency: string;
-  amount: number;
-  decimals: number;
-}
-
-interface Author {
-  name: string;
-  lastname: string;
-}
-
-const page = async ({ params, searchParams }: { params: { slug: string }; searchParams?: { [key: string]: string | string[] | undefined } }) => {
+const page = async ({ searchParams }: { searchParams?: { [key: string]: string } }) => {
   if (!searchParams?.search) {
     redirect(`/`);
   }
 
-  const request = await fetch(`http://localhost:3000/api/items?q=${searchParams.search}`);
+  const data = await api.search(searchParams.search);
 
-  if (!request.ok) {
-    throw new Error('No se pudo realizar la búsqueda');
-  }
-
-  const data: ResponseItems = await request.json();
-
-  const currencyFormatter = (amount: number, currencyID: string) => {
-    const formatter = new Intl.NumberFormat('es-AR', {
-      style: 'currency',
-      currency: currencyID,
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    });
-    return formatter.format(amount);
-  };
-
-  console.log({ data });
   return (
     <>
-      <section className='breadcrumb'>
-        <nav aria-label='breadcrumb'>
-          <ol>
-            {data.categories.map((category) => (
-              <li key={category}>
-                <p>{category}</p>
-              </li>
-            ))}
-          </ol>
-        </nav>
-      </section>
-
+      <Breadcrumb categories={data.categories} />
       <section className='results-container'>
         <ol>
           {data.items.map((item) => (
             <li
               key={item.id}
               className='product-container'>
-              <div className='product-details-wrapper'>
-                <Image
-                  className='product-image'
-                  src={item.picture}
-                  width={180}
-                  height={180}
-                  alt={item.title}
-                />
-                <div className='details'>
-                  <div className='details-price-shipping'>
-                    <p className='price'>{currencyFormatter(item.price.amount, item.price.currency)}</p>
-                    {item.free_shipping && (
-                      <Image
-                        className='free-shipping'
-                        src={'/images/ic_shipping@2x.png'}
-                        width={26}
-                        height={26}
-                        alt={item.title}
-                      />
-                    )}
-                  </div>
-                  <h2 className='details-title'>{item.title}</h2>
-                </div>
-                <div className='location'>
-                  <p>Capital Federal</p>
-                </div>
-              </div>
+              <ProductResultCard productItem={item} />
             </li>
           ))}
         </ol>

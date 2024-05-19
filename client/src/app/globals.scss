@@ -40,3 +40,11 @@ header {
   min-height: 80px;
   max-height: 80px;
 }
+
+.error-container {
+  grid-column: 2 / 12;
+    margin-block: 18px;
+    margin-inline: auto;
+    color: $text-danger;
+    font-weight: 500;
+}
