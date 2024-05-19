@@ -1,0 +1,123 @@
+@import '../../app/theme.scss';
+
+
+.details-container {
+  grid-column: 2 / 12;
+  background-color: #ffffff;
+  border-radius: $border-radius;
+  margin-bottom: $margin-md;
+}
+
+.info-price-container {
+  display: flex;
+  padding: $padding-md;
+  gap:$gap-md;
+}
+
+.info-price-container .image-container .main-image {
+  object-fit: contain;
+  border-radius: $border-radius;
+  height: auto;
+  max-height: 680px;
+}
+
+.info-price-container .price-details-container .condition-sold {
+  font-size: $font-size-sm;
+  margin-bottom: $margin-sm;
+}
+
+.info-price-container .price-details-container .title {
+  font-size: $font-size-xl;
+  font-weight: 600;
+}
+
+.info-price-container .price-details-container .price {
+  margin-block: $margin-md;
+  font-size: $font-size-3xl;
+}
+
+
+
+.info-price-container .price-details-container .buy-btn-container > button {
+  width: 100%;
+  background-color: $secondary-color;
+  border: unset;
+  padding-block: $padding-sm;
+  border-radius: $border-radius;
+  color: #ffff;
+  font-weight: lighter;
+  font-size: $font-size-md;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.info-price-container .price-details-container .buy-btn-container > button:hover {
+  background-color: #2968c8;
+}
+
+.description-container {
+  padding: $padding-md;
+}
+
+
+.description-container .description-title {
+  margin-bottom: $margin-md;
+  font-size: $font-size-2xl;
+  font-weight: normal;
+}
+
+.description-container .product-description {
+  max-width: 680px;
+  font-size: $font-size-md;
+  color: $text-secondary-color;
+}
+
+@media (max-width: 1200px) {
+  .info-price-container .image-container .main-image {
+    object-fit: contain;
+    border-radius: $border-radius;
+    max-width: 500px;
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .info-price-container .image-container .main-image {
+    object-fit: contain;
+    border-radius: $border-radius;
+    max-width: 400px;
+    max-height: 400px;
+  }
+}
+
+
+@media (max-width: 850px) {
+  .info-price-container .image-container .main-image {
+    object-fit: contain;
+    border-radius: $border-radius;
+    max-width: 300px;
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 750px) {
+  .info-price-container .image-container .main-image {
+    object-fit: contain;
+    border-radius: $border-radius;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .info-price-container {
+    flex-direction: column;
+  }
+
+  .info-price-container .price-details-container .title {
+    max-width: 100%;
+    font-weight: 600;
+  }
+
+  .info-price-container .price-details-container .price {
+    margin-block: $margin-sm;
+  }
+}

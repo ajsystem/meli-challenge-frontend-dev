@@ -23,7 +23,7 @@ main .main-container {
   display: grid;
   grid-template-columns: repeat(12,1fr);
   gap:$gap-sm;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: auto;
 }
 
@@ -35,7 +35,7 @@ header {
   display: grid;
   grid-template-columns: repeat(12,1fr);
   gap:$gap-sm;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: auto;
   min-height: 80px;
   max-height: 80px;

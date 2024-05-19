@@ -23,3 +23,22 @@ interface Author {
   name: string;
   lastname: string;
 }
+
+
+
+export interface ResponseItemDetails {
+  author: Author;
+  item: ItemDetails;
+}
+
+export interface ItemDetails {
+  id: string;
+  title: string;
+  categories: string[];
+  price: Price;
+  picture: string;
+  condition: string;
+  free_shipping: boolean;
+  sold_quantity: number;
+  description: string;
+}

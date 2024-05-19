@@ -1,4 +1,4 @@
-import { ResponseItems } from '../interfaces';
+import { ResponseItemDetails, ResponseItems } from '../interfaces';
 
 const API_URL = 'http://localhost:3010/api/items';
 
@@ -15,6 +15,6 @@ export const api = {
     if (!response.ok) {
       throw new Error(`No se pudo realizar la petición por el ID del producto, ID: ${id}, intenta primero realizar una búsqueda.`);
     }
-    return await response.json();
+    return (await response.json()) as Promise<ResponseItemDetails>;
   },
 };
